@@ -1,4 +1,4 @@
-//----------------This is COntroller file
+//----------------This is Controller file (application/controllers/admin.php)
 
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
