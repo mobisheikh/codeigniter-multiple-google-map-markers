@@ -111,28 +111,8 @@
 				
 				</script>
 
-<div class="col-md-10 padding white right-p">
-   <div class="content">
-      <div class="main-hed">
-         <a href="<?php echo site_url();?>/auth"><?php echo $this->lang->line('home');?></a> 
-         <?php if(isset($title)) echo " >> Trip Sheet >> ".$title;?>
-      </div>
-	  
-      <div class="col-md-12 padding-p-r">
-         <div class="module">
-		 <div class="module-head">
-               <h3><?php echo $title;?></h3>
-            </div>
-			
-			<div class="google-map-wrap" itemscope itemprop="hasMap" itemtype="http://schema.org/Map">
-					<div id="google-map" class="google-map">
-					</div><!-- #google-map -->
-			</div>
-			
-         </div>
-      </div>
-      <!--/.module--> 
-   </div>
-   <!--/.content--> 
+<div class="google-map-wrap" itemscope itemprop="hasMap" itemtype="http://schema.org/Map">
+	<div id="google-map" class="google-map">
+	</div><!-- #google-map -->
 </div>
-
+			
