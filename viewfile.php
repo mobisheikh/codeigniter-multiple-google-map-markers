@@ -37,8 +37,6 @@
 						bounds.push(latlng);
 						var marker;
 
-						// every 10 seconds
-						//setInterval(updateMarker,5000);
 						/* Add Marker */
 						map.addMarker({
 							lat: <?php echo $map_lat; ?>,
@@ -66,9 +64,7 @@
 
 					$(window).resize(mapWidth);
 					map.fitZoom();
-
-					//map.setCenter(-37.814107,144.963280);
-					//setInterval(reloadMap,9000);
+					
 					setInterval(function(){
 						
 						$.ajax({
@@ -97,37 +93,22 @@
 						
 						$.each(obj, function(i, item) {
 								
-				 /* var content = '<div id="iw-container">' +
-                    '<div class="iw-title">'+item.vehicle_name+'</div>' +
-                    '<div class="iw-content">' +
-                      '<p><strong>Driver Name:</strong> '+item.driver_name+'</p>' +
-                      '<p><strong>Clients in the vehicle:</strong> '+item.driver_name+'</p>' +
-					  '<p><strong>Heading to Address:</strong> '+item.driver_name+'</p>' +
-					  '<p><strong>Expected Arrival Time:</strong> '+item.driver_name+'</p>' +
-                    '</div>' +
-                    '<div class="iw-bottom-gradient"></div>' +
-                  '</div>';*/
-				  
-				
-				 // console.log(item.content);
-									map.addMarker({
-												lat: item.google_map.lat, //-37.876964,//
-												lng: item.google_map.lng,// 145.058542,//
-												title: item.location_name,
-												label: item.veh_name,
-												zoom: 8,
-												infoWindow: {
-												content: item.content//content//'<p>'+item.location_name+'</p>'newContent//
-											}
+				map.addMarker({
+						lat: item.google_map.lat, //-37.876964,//
+						lng: item.google_map.lng,// 145.058542,//
+						title: item.location_name,
+						label: item.veh_name,
+						zoom: 8,
+						infoWindow: {
+								content: item.content//content//'<p>'+item.location_name+'</p>'newContent//
+							}
 	
 										});
-										
-									//console.log(item.google_map.lat+'='+item.google_map.lng);
 						});
 						
-						//map.fitZoom();
+						//Retain Map Zoom Level
 						google.maps.event.addListener(map, 'zoom_changed', saveMapState);
-    					google.maps.event.addListener(map, 'dragend', saveMapState);
+    						google.maps.event.addListener(map, 'dragend', saveMapState);
 								 
 					}
 
